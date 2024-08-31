@@ -51,5 +51,39 @@
         - dataset
     - calls the cartPannel which will show cart items
 - products page
-    - copy the about.html (nav, heading), it is kind of copy & paste, repeating, unfortunately with vanilla javascript we need to copy & paste as much as we can.
-    - 
+    - copy the about.html (nav, heading), it is kind of copy & paste, repeating, unfortunately with vanilla javascript we need to copy & paste.
+    - products
+        - display all products
+        - products.js (global, filter, specific imports)
+        - re-using displayProducts.js to display products
+        - loading - even we're getting the data from local storage, when we navigate to this page from another page, it will take sometime to to update that. since we use this in the single product because there we will be fetching data.
+    - filters (all these fitlers are not combined in this project (need more products to display))
+        - search filter
+            - get the value from input, keyup event on form
+            - convert the product name or property to the lowerCase()
+            - if the typing value matched with product name then return that product which startsWith, else display all the products
+            - if no matches found, then display the message.
+            - form, keyup, input.value, filter, toLowerCase(), startsWith().
+        - companies filter
+            - setupCompanies
+                - iterate the products to get the companies.
+                - new Set() data structure to get the unique values in an object
+                - spread operator
+                - ['all', ...new Set(store.map(product => product.company))]
+                - display the unique companies as categories
+                - on clicking on company categories, it should display the matched products
+                - if the category is all, then display the copied store.
+                - bubbling
+        - price filter
+            - get the price-filter, price-value
+            - get the prices from the products, find the max-price, and rounded it up
+            - set the price-filter values such as max, value, min
+            - set the price-value as max-price
+            - input event on price-filter
+            - parseInt the input value (price-filter)
+            - set the price-value as parsed input value(price-filter)
+            - filter the products price and compare with the input value(price-filter); price <= value
+            - display the returned result
+            - if no products found then display the message
+            - Math.max(), Math.ceil, [input Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event), parseInt
+                
