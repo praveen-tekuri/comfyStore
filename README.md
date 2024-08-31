@@ -86,4 +86,23 @@
             - display the returned result
             - if no products found then display the message
             - Math.max(), Math.ceil, [input Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event), parseInt
-                
+- product page
+    - clicking on product's search icon should display the product page
+    - for each product there is a unique id that we're passing through href, a query parameter with id
+    - page setup
+        - data-id
+        - loading section
+    - product.js
+        - show the the product when page loades DOMContentLoaded event on window.
+        - async function as we're fetching the product
+        - hide the loading
+        - Fetch product
+            - window.location.search to get the product id
+            - try catch block, fetch
+            - response.status >= 200 && response.status <= 299, if it does not match then render error message
+            - destructuring
+            - document & page title updated with product name
+            - forEach to iterate the colors
+            - createElement, appendChild
+            - click event on add to cart button, show the cart items, send the productId to the cart. (update the productId)
+           
