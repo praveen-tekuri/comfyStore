@@ -105,4 +105,56 @@
             - forEach to iterate the colors
             - createElement, appendChild
             - click event on add to cart button, show the cart items, send the productId to the cart. (update the productId)
-           
+- setupCart
+    - initialized the cart variable
+    - addToCart - when the addToCart button is clicked do this stuff
+        - find the product with id in the cart
+        - if the product not found in the cart then add the product to the cart
+            - find the product with id in the store
+            - add the amount property to the product
+            - copy existing cart data & the new product to the cart
+            - pass the product to the addToCartDOM
+                - addToCartDOM
+                    - destructrue the data from product
+                    - and display the data in the cart
+                    - create article, addClass, setAttribute, innerHTML, appendChild
+        - else update the items in the cart
+            - increaseAmount
+                - if the id of cart item and addToCart id is same then udpate the cartItem with 1
+                - get all the amount selectors (classes), find  if amount selector id & addToCart id is same then assign the updated amount value to the amount selector.
+                - 
+        - Totals
+            - add one to the item count in navbar
+                - reduce function (total += amount)
+            - udpate the cart total
+                - reduce function (total += price * amount)
+            - set cart in local storage
+    - init - when the page is refreshed or switch from page to page, all the function inside the init should be run
+        - displayCartItemCount
+        - displayCartTotal
+        - displayCartItemsDOM
+            - display the items in the cart, forEach
+        - setupCartFunctionality
+    - setupCartFunctionality
+        - click event on cartItemDOM
+        - target the element
+        - get the parent element
+        - get the data-set id of the targeted element
+        - get the data-set id of the parent element
+        - removeItem 
+            - if the element contains the class, then remove the item
+            - filter to check the id's (cartItem.id !== dataset.id)
+        - increment
+            - if the parent contains the class, then do increment
+            - reusing the increamentAmount function
+            - nextElementSibling
+        - decrement
+            - if the parent contains the class, then do increment
+            - if the cartItem amount is 0, then remove item, and parent element(whole item) from the DOM
+            - else update the decrement value 
+            - previousElementSibling
+- products page fix
+    - if store.length < 1 display loading message
+- filters fix
+    - since we call it every time we run filters, we keep adding event listeners 
+          
