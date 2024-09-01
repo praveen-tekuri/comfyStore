@@ -154,9 +154,8 @@
             - else update the decrement value 
             - previousElementSibling
 - products page fix
-    - 1. if store.length < 1 display loading message.
-### 31082024
-    - 2. displayProducts.js 
+    1. if store.length < 1, then display loading message.
+    2. displayProducts js  
         - it is having display function which has the code to display single product and addToCart function call on element.
         - everytime we click on add to cart button, we are calling this display function.
         - we also using this function in filters to filter out the products, so when we start using fitlers and add any item to the cart, the cart items being increased with unexpected count, because evertime we use fitlers we also calling event listeners (addToCart).
