@@ -119,7 +119,7 @@ function setupCartFunctionality(){
        }
        displayCartItemCount();
        displayCartTotal();
-      //  setStorageItem('cart', cart);
+       setStorageItem('cart', cart);
     })
 }
 

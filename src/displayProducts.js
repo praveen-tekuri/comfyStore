@@ -21,7 +21,8 @@ const display = (products, element, filters) => {
           </footer>
           </article>`
     }).join("");
-    if(filters) return true;
+    if(filters) return;
+    // IN case of filters DONT call this event listener
     element.addEventListener("click", function(e){
         const parent = e.target.parentElement;
         if(parent.classList.contains("product-cart-btn")){

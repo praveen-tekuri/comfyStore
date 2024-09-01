@@ -150,11 +150,17 @@
             - nextElementSibling
         - decrement
             - if the parent contains the class, then do increment
-            - if the cartItem amount is 0, then remove item, and parent element(whole item) from the DOM
+            - if the cartItem amount is 0, then remove item (local storage), and parent element(whole item) from the DOM
             - else update the decrement value 
             - previousElementSibling
 - products page fix
-    - if store.length < 1 display loading message
-- filters fix
-    - since we call it every time we run filters, we keep adding event listeners 
+    - 1. if store.length < 1 display loading message.
+### 31082024
+    - 2. displayProducts.js 
+        - it is having display function which has the code to display single product and addToCart function call on element.
+        - everytime we click on add to cart button, we are calling this display function.
+        - we also using this function in filters to filter out the products, so when we start using fitlers and add any item to the cart, the cart items being increased with unexpected count, because evertime we use fitlers we also calling event listeners (addToCart).
+        - to fix this, conditionaly call the event listener in the display function, 
+        - in case of fitlers, then return from display function. filters && return before the event. DONT call the event.
+        - if we calling filters, we already working in the products, if we working in the products page, the event listener is already there, becasue every time we go to the products page, we will add that event listener.
           
